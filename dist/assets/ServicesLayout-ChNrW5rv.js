@@ -1,0 +1,1 @@
+import{r as e,t}from"./index-nGdXNDGO.js";var n=t();function r(){return(0,n.jsx)(`main`,{className:`section`,children:(0,n.jsx)(`div`,{className:`container`,children:(0,n.jsx)(e,{})})})}export{r as default};
