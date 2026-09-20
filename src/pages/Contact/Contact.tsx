@@ -1,36 +1,36 @@
-import Button from '../../components/ui/Button';
+import ContactForm from "./ContactForm";
 
 const CONTACT_INFO = [
-    {
-        label: 'Visit Us',
-        value: '1894 E William St STE 4, Carson City, NV 89701',
-        href: 'https://www.google.com/maps/place/1894+E+William+St,+Carson+City,+NV+89701',
-        icon: '⌖',
-    },
-    {
-        label: 'Call Us',
-        value: '(626) 548 7517',
-        href: 'tel:+16265487517',
-        icon: '↗',
-    },
-    {
-        label: 'Email Us',
-        value: 'info@systemmapai.com',
-        href: 'mailto:info@systemmapai.com',
-        icon: '✉',
-    },
-    {
-        label: 'Business Hours',
-        value: 'Mon–Fri: 9:00am – 7:00pm',
-        href: null,
-        icon: '◷',
-    },
+  {
+    label: "Visit Us",
+    value: "1894 E William St STE 4, Carson City, NV 89701",
+    href: "https://www.google.com/maps/place/1894+E+William+St,+Carson+City,+NV+89701",
+    icon: "⌖",
+  },
+  {
+    label: "Call Us",
+    value: "(626) 548 7517",
+    href: "tel:+16265487517",
+    icon: "↗",
+  },
+  {
+    label: "Email Us",
+    value: "info@systemmapai.com",
+    href: "mailto:info@systemmapai.com",
+    icon: "✉",
+  },
+  {
+    label: "Business Hours",
+    value: "Mon–Fri: 9:00am – 7:00pm",
+    href: null,
+    icon: "◷",
+  },
 ];
 
 export default function ContactPage() {
-    return (
-        <main className="contact-page">
-            <style>{`
+  return (
+    <main className="contact-page">
+      <style>{`
                 .contact-page {
                     min-height: 100vh;
                     overflow: hidden;
@@ -477,131 +477,96 @@ export default function ContactPage() {
                 }
             `}</style>
 
-            {/* HERO */}
-            <section className="contact-hero">
-                <div className="container">
-                    <div className="contact-eyebrow">Let's Talk</div>
-                    <h1 className="contact-title">Contact Us</h1>
-                    <p className="contact-subtitle">
-                        Have a project in mind or simply want to explore what's possible?
-                        Tell us what you're building and our team will help you find the right path forward.
-                    </p>
+      {/* HERO */}
+      <section className="contact-hero">
+        <div className="container">
+          <div className="contact-eyebrow">Let's Talk</div>
+          <h1 className="contact-title">Contact Us</h1>
+          <p className="contact-subtitle">
+            Have a project in mind or simply want to explore what's possible?
+            Tell us what you're building and our team will help you find the
+            right path forward.
+          </p>
+        </div>
+      </section>
+
+      <section className="contact-content">
+        <div className="container">
+          {/* CONTACT INFO */}
+          <div className="contact-info-grid">
+            {CONTACT_INFO.map((info) => (
+              <div key={info.label} className="contact-info-card">
+                <div className="contact-icon" aria-hidden="true">
+                  {info.icon}
                 </div>
-            </section>
 
-            <section className="contact-content">
-                <div className="container">
-                    {/* CONTACT INFO */}
-                    <div className="contact-info-grid">
-                        {CONTACT_INFO.map((info) => (
-                            <div key={info.label} className="contact-info-card">
-                                <div className="contact-icon" aria-hidden="true">
-                                    {info.icon}
-                                </div>
+                <div className="contact-info-label">{info.label}</div>
 
-                                <div className="contact-info-label">{info.label}</div>
+                {info.href ? (
+                  <a className="contact-info-value" href={info.href}>
+                    {info.value}
+                  </a>
+                ) : (
+                  <div className="contact-info-value">{info.value}</div>
+                )}
+              </div>
+            ))}
+          </div>
 
-                                {info.href ? (
-                                    <a className="contact-info-value" href={info.href}>
-                                        {info.value}
-                                    </a>
-                                ) : (
-                                    <div className="contact-info-value">{info.value}</div>
-                                )}
-                            </div>
-                        ))}
+          {/* FORM + TESTIMONIAL */}
+          <div className="contact-main-grid">
+            <div className="contact-form-card">
+              <h2 className="contact-form-heading">Send Us a Message</h2>
+              <p className="contact-form-intro">
+                Share a few details about your project and we'll get back to you
+                with the next steps and a free quote.
+              </p>
+              <ContactForm />
+            </div>
+
+            <aside className="contact-side-card">
+              <div className="contact-side-content">
+                <div className="contact-side-kicker">Why Work With Us</div>
+                <h2 className="contact-side-title">
+                  Let's turn your idea into something exceptional.
+                </h2>
+                <p className="contact-side-copy">
+                  From strategy and design to development and growth, we bring
+                  everything together to create digital experiences that move
+                  your business forward.
+                </p>
+
+                <div className="contact-quote">
+                  <div className="contact-quote-mark">“</div>
+                  <p className="contact-quote-text">
+                    Working with them is always a pleasure. Their team is
+                    responsive, efficient, and consistently meets deadlines.
+                    They've been integral in pushing our digital boundaries.
+                  </p>
+
+                  <div className="contact-person">
+                    <div className="contact-avatar">AE</div>
+                    <div>
+                      <div className="contact-person-name">Ava Evans</div>
+                      <div className="contact-person-role">
+                        Creative Director, Fusion LLC
+                      </div>
                     </div>
-
-                    {/* FORM + TESTIMONIAL */}
-                    <div className="contact-main-grid">
-                        <div className="contact-form-card">
-                            <h2 className="contact-form-heading">Send Us a Message</h2>
-                            <p className="contact-form-intro">
-                                Share a few details about your project and we'll get back to you
-                                with the next steps and a free quote.
-                            </p>
-
-                            <form className="contact-form">
-                                <div className="contact-fields">
-                                    <div className="contact-field">
-                                        <label htmlFor="first-name">First Name</label>
-                                        <input id="first-name" name="firstName" placeholder="Jane" />
-                                    </div>
-
-                                    <div className="contact-field">
-                                        <label htmlFor="last-name">Last Name</label>
-                                        <input id="last-name" name="lastName" placeholder="Doe" />
-                                    </div>
-                                </div>
-
-                                <div className="contact-fields">
-                                    <div className="contact-field">
-                                        <label htmlFor="email">Email Address</label>
-                                        <input id="email" name="email" type="email" placeholder="jane@company.com" />
-                                    </div>
-
-                                    <div className="contact-field">
-                                        <label htmlFor="phone">Phone</label>
-                                        <input id="phone" name="phone" type="tel" placeholder="+1 (626) 548-7517" />
-                                    </div>
-                                </div>
-
-                                <div className="contact-field">
-                                    <label htmlFor="subject">Subject</label>
-                                    <input id="subject" name="subject" placeholder="How can we help?" />
-                                </div>
-
-                                <div className="contact-field">
-                                    <label htmlFor="message">Message</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows={6}
-                                        placeholder="Tell us about your goals, requirements, timeline, or anything else you'd like us to know..."
-                                    />
-                                </div>
-
-                                <div className="contact-submit">
-                                    <Button type="submit">Send Message</Button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <aside className="contact-side-card">
-                            <div className="contact-side-content">
-                                <div className="contact-side-kicker">Why Work With Us</div>
-                                <h2 className="contact-side-title">Let's turn your idea into something exceptional.</h2>
-                                <p className="contact-side-copy">
-                                    From strategy and design to development and growth, we bring
-                                    everything together to create digital experiences that move your business forward.
-                                </p>
-
-                                <div className="contact-quote">
-                                    <div className="contact-quote-mark">“</div>
-                                    <p className="contact-quote-text">
-                                        Working with them is always a pleasure. Their team is responsive,
-                                        efficient, and consistently meets deadlines. They've been integral
-                                        in pushing our digital boundaries.
-                                    </p>
-
-                                    <div className="contact-person">
-                                        <div className="contact-avatar">AE</div>
-                                        <div>
-                                            <div className="contact-person-name">Ava Evans</div>
-                                            <div className="contact-person-role">Creative Director, Fusion LLC</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="contact-trust">
-                                <span className="contact-trust-dot" />
-                                <span>Your information is kept private and used only to respond to your inquiry.</span>
-                            </div>
-                        </aside>
-                    </div>
+                  </div>
                 </div>
-            </section>
-        </main>
-    );
+              </div>
+
+              <div className="contact-trust">
+                <span className="contact-trust-dot" />
+                <span>
+                  Your information is kept private and used only to respond to
+                  your inquiry.
+                </span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }

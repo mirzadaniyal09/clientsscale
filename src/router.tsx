@@ -1,48 +1,39 @@
-import { lazy, Suspense } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { lazy, Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import MainLayout from './layouts/MainLayout';
-import PageLoader from './components/layout/PageLoader';
-import { services } from './data/services';
+import MainLayout from "./layouts/MainLayout";
+import PageLoader from "./components/layout/PageLoader";
+import { services } from "./data/services";
 
-const Home = lazy(() => import('./pages/Home/Home'));
-const Portfolio = lazy(() => import('./pages/Portfolio/Portfolio'));
-const Contact = lazy(() => import('./pages/Contact/Contact'));
-const CTA = lazy(() => import('./pages/CTA/CTA'));
-const GetQuotePage = lazy(() => import('./pages/GetQuote'));
-const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
+const Home = lazy(() => import("./pages/Home/Home"));
+const Portfolio = lazy(() => import("./pages/Portfolio/Portfolio"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 // Company & extra pages
-const OurClients = lazy(() => import('./pages/Company/OurClients'));
-const OurTeam = lazy(() => import('./pages/Company/OurTeam'));
-const Faqs = lazy(() => import('./pages/Company/Faqs'));
-const Pricing = lazy(() => import('./pages/Company/Pricing'));
-const TestimonialsPage = lazy(() => import('./pages/testimonials/Testimonials'));
-const AboutPage = lazy(() => import('./pages/About'));
+const OurClients = lazy(() => import("./pages/Company/OurClients"));
+const OurTeam = lazy(() => import("./pages/Company/OurTeam"));
+const Faqs = lazy(() => import("./pages/Company/Faqs"));
+const Pricing = lazy(() => import("./pages/Company/Pricing"));
+const AboutPage = lazy(() => import("./pages/About"));
 
-const ServicesLayout = lazy(() => import('./pages/services/ServicesLayout'));
-const ServicesList = lazy(() => import('./pages/services/ServicesList'));
+const ServicesLayout = lazy(() => import("./pages/services/ServicesLayout"));
+const ServicesList = lazy(() => import("./pages/services/ServicesList"));
 
 /*
 |--------------------------------------------------------------------------
 | Generate service routes directly from services.ts
 |--------------------------------------------------------------------------
-|
 | Every service must have:
-|
-| slug: 'example-slug'
-|
+|   slug: 'example-slug'
 | and a matching file:
-|
-| pages/services/example-slug.tsx
-|
+|   pages/services/example-slug.tsx
+|--------------------------------------------------------------------------
 */
 const serviceRoutes = services.map((service) => ({
   path: service.slug,
-
   lazy: async () => {
     const component = await import(`./pages/services/${service.slug}.tsx`);
-
     return {
       Component: component.default,
     };
@@ -51,13 +42,10 @@ const serviceRoutes = services.map((service) => ({
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <MainLayout />,
-
     children: [
-      // =========================================================
       // HOME
-      // =========================================================
       {
         index: true,
         element: (
@@ -67,20 +55,15 @@ export const router = createBrowserRouter([
         ),
       },
 
-      // =========================================================
       // SERVICES
-      // =========================================================
       {
-        path: 'services',
-
+        path: "services",
         element: (
           <Suspense fallback={<PageLoader />}>
             <ServicesLayout />
           </Suspense>
         ),
-
         children: [
-          // All Services
           {
             index: true,
             element: (
@@ -89,17 +72,13 @@ export const router = createBrowserRouter([
               </Suspense>
             ),
           },
-
-          // Individual Services
           ...serviceRoutes,
         ],
       },
 
-      // =========================================================
       // PORTFOLIO
-      // =========================================================
       {
-        path: 'portfolio',
+        path: "portfolio",
         element: (
           <Suspense fallback={<PageLoader />}>
             <Portfolio />
@@ -107,23 +86,9 @@ export const router = createBrowserRouter([
         ),
       },
 
-      // =========================================================
-      // TESTIMONIALS
-      // =========================================================
-      {
-        path: 'testimonials',
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <TestimonialsPage />
-          </Suspense>
-        ),
-      },
-
-      // =========================================================
       // COMPANY PAGES
-      // =========================================================
       {
-        path: 'our-clients',
+        path: "our-clients",
         element: (
           <Suspense fallback={<PageLoader />}>
             <OurClients />
@@ -131,7 +96,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'our-team',
+        path: "our-team",
         element: (
           <Suspense fallback={<PageLoader />}>
             <OurTeam />
@@ -139,7 +104,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'faqs',
+        path: "faqs",
         element: (
           <Suspense fallback={<PageLoader />}>
             <Faqs />
@@ -147,7 +112,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'pricing',
+        path: "pricing",
         element: (
           <Suspense fallback={<PageLoader />}>
             <Pricing />
@@ -157,7 +122,7 @@ export const router = createBrowserRouter([
 
       // ABOUT
       {
-        path: 'about-us',
+        path: "about-us",
         element: (
           <Suspense fallback={<PageLoader />}>
             <AboutPage />
@@ -165,11 +130,9 @@ export const router = createBrowserRouter([
         ),
       },
 
-      // =========================================================
       // CONTACT
-      // =========================================================
       {
-        path: 'contact-us',
+        path: "contact-us",
         element: (
           <Suspense fallback={<PageLoader />}>
             <Contact />
@@ -177,23 +140,9 @@ export const router = createBrowserRouter([
         ),
       },
 
-      // =========================================================
-      // GET FREE QUOTE
-      // =========================================================
-      {
-        path: 'contact-us',
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <Contact />
-          </Suspense>
-        ),
-      },
-
-      // =========================================================
       // 404
-      // =========================================================
       {
-        path: '*',
+        path: "*",
         element: (
           <Suspense fallback={<PageLoader />}>
             <NotFound />

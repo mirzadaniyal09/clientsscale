@@ -1,68 +1,64 @@
-import { Link } from 'react-router-dom';
-import { services } from '../../data/services';
-import { ArrowRight } from 'lucide-react'; // or your preferred icon library
+import { Link } from "react-router-dom";
+import { services } from "../data/services";
+import { ArrowRight } from "lucide-react"; // or your preferred icon library
 
 export default function ServicesList() {
-    return (
-        <div className="services-container">
-            {/* Header Section */}
-            <div className="services-header">
-                <span className="services-badge">What We Offer</span>
-                <h1 className="services-title">Our Services</h1>
-                <p className="services-description">
-                    From product strategy to cloud operations, we help businesses
-                    build better tools and experiences that drive real impact.
-                </p>
-            </div>
+  return (
+    <div className="services-container">
+      {/* Header Section */}
+      <div className="services-header">
+        <span className="services-badge">What We Offer</span>
+        <h1 className="services-title">Our Services</h1>
+        <p className="services-description">
+          From product strategy to cloud operations, we help businesses build
+          better tools and experiences that drive real impact.
+        </p>
+      </div>
 
-            {/* Services Grid */}
-            <div className="services-grid">
-                {services.map((service) => {
-                    const Icon = service.icon;
+      {/* Services Grid */}
+      <div className="services-grid">
+        {services.map((service) => {
+          const Icon = service.icon;
 
-                    return (
-                        <Link
-                            key={service.slug}
-                            to={`/services/${service.slug}`}
-                            className="service-card"
-                        >
-                            <div className="service-card-inner">
-                                {/* Icon with gradient background */}
-                                <div className="service-icon-wrapper">
-                                    <div className="service-icon-circle">
-                                        <Icon className="service-icon" />
-                                    </div>
-                                </div>
+          return (
+            <Link
+              key={service.slug}
+              to={`/services/${service.slug}`}
+              className="service-card"
+            >
+              <div className="service-card-inner">
+                {/* Icon with gradient background */}
+                <div className="service-icon-wrapper">
+                  <div className="service-icon-circle">
+                    <Icon className="service-icon" />
+                  </div>
+                </div>
 
-                                {/* Content */}
-                                <div className="service-content">
-                                    <h3 className="service-title">
-                                        {service.title}
-                                    </h3>
-                                    <p className="service-summary">
-                                        {service.summary}
-                                    </p>
-                                </div>
+                {/* Content */}
+                <div className="service-content">
+                  <h3 className="service-title">{service.title}</h3>
+                  <p className="service-summary">{service.summary}</p>
+                </div>
 
-                                {/* Arrow indicator */}
-                                <div className="service-arrow">
-                                    <ArrowRight size={20} />
-                                </div>
-                            </div>
-                        </Link>
-                    );
-                })}
-            </div>
+                {/* Arrow indicator */}
+                <div className="service-arrow">
+                  <ArrowRight size={20} />
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
 
-            {/* Optional CTA Section */}
-            <div className="services-cta">
-                <p>Need a custom solution?</p>
-                <Link to="/contact" className="cta-button">
-                    Let's Talk
-                </Link>
-            </div>
+      {/* Optional CTA Section */}
+      <div className="services-cta">
+        <p>Need a custom solution?</p>
+        <Link to="/contact" className="cta-button">
+          Let's Talk
+        </Link>
+      </div>
 
-            <style>{`
+      <style>{`
                 .services-container {
                     max-width: 1200px;
                     margin: 0 auto;
@@ -294,6 +290,6 @@ export default function ServicesList() {
                     }
                 }
             `}</style>
-        </div>
-    );
+    </div>
+  );
 }
