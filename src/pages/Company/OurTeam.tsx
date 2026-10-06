@@ -960,6 +960,7 @@ export default function OurTeam() {
 
           font-size: 20px;
           font-weight: 800;
+          object-fit: cover;
         }
 
         .ai-team-name {
@@ -1146,43 +1147,49 @@ export default function OurTeam() {
 
           <div className="ai-team-grid">
             <div className="ai-team-card">
-              <div className="ai-team-avatar">AM</div>
+              <img className="ai-team-avatar" src="/team/Abubakar%20Bin%20Mukhtar.jpeg" alt="Portrait of Abubakar Bin Mukhtar" />
               <div className="ai-team-name">Abubakar Bin Mukhtar</div>
               <div className="ai-team-role">Founder & CEO</div>
             </div>
 
             <div className="ai-team-card">
-              <div className="ai-team-avatar">DC</div>
+              <img className="ai-team-avatar" src="/team/daniyal-basheer.jpeg" alt="Portrait of Daniyal Basheer" />
+              <div className="ai-team-name">Daniyal Basheer</div>
+              <div className="ai-team-role">Web Developer</div>
+            </div>
+
+            <div className="ai-team-card">
+              <img className="ai-team-avatar" src="/team/Dana%20Cotton.jpeg" alt="Portrait of Dana Cotton" />
               <div className="ai-team-name">Dana Cotton</div>
               <div className="ai-team-role">Software Engineer</div>
             </div>
 
             <div className="ai-team-card">
-              <div className="ai-team-avatar">FD</div>
+              <img className="ai-team-avatar" src="/team/Freya%20Dean.jpeg" alt="Portrait of Freya Dean" />
               <div className="ai-team-name">Freya Dean</div>
               <div className="ai-team-role">Brand Strategist</div>
             </div>
 
             <div className="ai-team-card">
-              <div className="ai-team-avatar">LH</div>
+              <img className="ai-team-avatar" src="/team/Lucas%20Hall.jpeg" alt="Portrait of Lucas Hall" />
               <div className="ai-team-name">Lucas Hall</div>
               <div className="ai-team-role">Creative Artist</div>
             </div>
 
             <div className="ai-team-card">
-              <div className="ai-team-avatar">JB</div>
+              <img className="ai-team-avatar" src="/team/Jordan%20Barnes.jpeg" alt="Portrait of Jordan Barnes" />
               <div className="ai-team-name">Jordan Barnes</div>
               <div className="ai-team-role">Digital Marketer</div>
             </div>
 
             <div className="ai-team-card">
-              <div className="ai-team-avatar">SW</div>
+              <img className="ai-team-avatar" src="/team/sean%20winter.jpeg" alt="Portrait of Sean Winter" />
               <div className="ai-team-name">Sean Winter</div>
               <div className="ai-team-role">Growth Strategist</div>
             </div>
 
             <div className="ai-team-card">
-              <div className="ai-team-avatar">EK</div>
+              <img className="ai-team-avatar" src="/team/Emily%20Knight.jpeg" alt="Portrait of Emily Knight" />
               <div className="ai-team-name">Emily Knight</div>
               <div className="ai-team-role">Support Engineer</div>
             </div>

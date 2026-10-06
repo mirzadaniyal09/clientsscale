@@ -43,12 +43,11 @@ export default function Header() {
             to="/"
             className="group shrink-0 flex items-center"
           >
-            <div
-              className="font-black tracking-[-0.09em] text-[#0a2d5d]"
-              style={{ fontSize: 'clamp(2.2rem, 3vw, 3.5rem)', lineHeight: 0.8 }}
-            >
-              CS
-            </div>
+            <img
+              src="/brand/clientsscale.png"
+              alt="ClientScale"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* =====================================================

@@ -2,35 +2,35 @@ import { useEffect, useRef } from 'react';
 
 const projects = [
     {
-        image: '/images/portfolio-1.jpg',
+        image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=85',
         title: 'Agriculture & Farming',
         category: 'Agriculture',
         description:
             'Digital solutions for agriculture businesses, from modern websites to platforms that connect farmers with their customers.',
     },
     {
-        image: '/images/portfolio-2.jpg',
+        image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85',
         title: 'Pharmaceutical',
         category: 'Pharmaceutical',
         description:
             'Professional digital experiences for pharmaceutical companies, healthcare brands, and medical businesses.',
     },
     {
-        image: '/images/portfolio-3.jpg',
+        image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=85',
         title: 'Energy & Solar',
         category: 'Energy',
         description:
             'High-performance websites and digital solutions for solar, renewable energy, and sustainability businesses.',
     },
     {
-        image: '/images/portfolio-4.jpg',
+        image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=85',
         title: 'Healthcare',
         category: 'Healthcare',
         description:
             'User-friendly digital experiences designed for healthcare providers, clinics, and medical professionals.',
     },
     {
-        image: '/images/portfolio-1.jpg',
+        image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85',
         title: 'Professional Services',
         category: 'Professional Services',
         description:

@@ -220,8 +220,8 @@ export default function Hero() {
                             }}
                         >
                             <img
-                                src="/images/hero-illustration.png"
-                                alt="AI marketing illustration"
+                                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
+                                alt="Marketing team collaborating around a laptop"
                                 style={{
                                     width: '100%',
                                     height: 470,
@@ -308,8 +308,8 @@ export default function Hero() {
                             }}
                         >
                             <img
-                                src="/images/qa-photo.jpg"
-                                alt="Quality assurance"
+                                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85"
+                                alt="Team reviewing a project together"
                                 style={{
                                     width: '100%',
                                     height: '100%',
